@@ -1,8 +1,11 @@
 import discord
 from discord.ext import commands
 import random
+import os
+from dotenv import load_dotenv
 
-TOKEN = "xxx"
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
@@ -67,7 +70,7 @@ async def fetch_thread_first_message(thread: discord.Thread):
 
 @bot.command(name="veto")
 async def veto(ctx, arg=None):
-    if ctx.channel.name.lower() != "admin":
+    if ctx.channel.name.lower() != "events-admin":
         return
 
     if arg != "start":
