@@ -1,6 +1,9 @@
 # UberStrike Discord Bots
 
-## Start Containeir
+## Setup
+This requires an .env file with the Discord Bot Token. eg: TOKEN=<token>
+
+## Build and start container
 ```
 docker compose up --build -d
 ```
