@@ -1,21 +1,5 @@
 services:
-  mssql:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: mssql
+  app:
+    build: .
     restart: unless-stopped
-
-    environment:
-      ACCEPT_EULA: ${ACCEPT_EULA}
-      SA_PASSWORD: ${SA_PASSWORD}
-      MSSQL_PID: ${MSSQL_PID}
-      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
-
-    ports:
-      - "1433:1433"
-
-    volumes:
-      - mssql_data:/var/opt/mssql
-
-volumes:
-  mssql_data:
-
+    # No volumes here, so it uses baked-in code & dependencies from the image
