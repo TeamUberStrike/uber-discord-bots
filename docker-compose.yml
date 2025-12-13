@@ -1,0 +1,5 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    # No volumes here, so it uses baked-in code & dependencies from the image
