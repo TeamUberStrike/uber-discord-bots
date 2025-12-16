@@ -70,7 +70,7 @@ async def fetch_thread_first_message(thread: discord.Thread):
 
 @bot.command(name="veto")
 async def veto(ctx, arg=None):
-    if ctx.channel.name.lower() != "events-admin":
+    if ctx.channel.name.lower() != "admin":
         return
 
     if arg != "start":
